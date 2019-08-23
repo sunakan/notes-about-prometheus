@@ -1,0 +1,27 @@
+== どこまでするか
+
+* exporterはまだ利用しない
+* Prometheusが使用しているメモリの使用状況をブラウザでグラフを確認する(grafanaでは見ない)
+
+=== 手順
+
+1. 起動
++
+----
+$ docker-compose up -d
+----
+2. http://localhost:9090/へアクセス
+3. PromQLにprocess_resident_memory_bytesを入力
+4. Executeを押す
+5. Graphタブを押す
+6. Graphが見える!!
+
+=== Targetsで何がターゲットになってるか確認する
+
+* ヘッダのStatusのプルダウンから、Targetsを選択する
+
+or
+
+* http://localhost:9090/targets
+
+これでjob名がprometheus.ymlで記述したjob_nameも確認可能
