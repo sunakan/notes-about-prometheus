@@ -1,0 +1,39 @@
+== どこまでするか
+
+* Node exporterでOSの状況をブラウザを通してグラフで見る
+
+=== Node exporterの起動(2019/06/04ビルド時のやつ(v0.18.1))
+
+----
+$ wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
+$ tar -xzf node_exporter-0.18.1.linux-amd64.tar.gz
+$ cd node_exporter-0.18.1.linux-amd64
+$ ./node_exporter
+----
+
+* http://localhost:9100/metricsへアクセス
+* これでメトリクスをGET可能
+* Prometheusでモニタリングするにはprometheus.ymlにjobを追加して起動して閲覧
+
+=== prometheusの起動
+
+1. 起動
++
+----
+$ docker-compose up -d
+----
+2. http://localhost:9090/へアクセス
+3. PromQLにrate(node_load5[1m])を入力
+4. Executeを押す
+5. Graphタブを押す
+6. Graphが見える!!(load average)
+
+=== Targetsで何がターゲットになってるか確認する
+
+* ヘッダのStatusのプルダウンから、Targetsを選択する
+
+or
+
+* http://localhost:9090/targets
+
+これでjob名がprometheus.ymlで記述したjob_nameも確認可能
