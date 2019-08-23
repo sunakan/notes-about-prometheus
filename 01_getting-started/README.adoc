@@ -1,0 +1,15 @@
+== 公式が出してるGETTING STARTED
+
+link:https://prometheus.io/docs/prometheus/latest/getting_started/[GETTING STARTED]
+
+==== どこまでするか
+
+* ブラウザ表示するまで(メトリクスは無し)
+
+==== localhost:3000(grafanaで見るだけ)
+
+* 左側にあるサイドバーのDashboards(四角が4つ並んでる)
+* Databaseアイコンの `Add data source` をクリック
+* Prometheusを選択(select)
+* URL: http://192.168.33.11:9090
+* あとは全部デフォルト
