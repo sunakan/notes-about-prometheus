@@ -1,0 +1,23 @@
+---
+
+version: "3.7"
+
+services:
+  cadvisor:
+    image: google/cadvisor:v0.33.0
+    ports:
+      - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+  prom:
+    image: prom/prometheus:v2.12.0
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    links:
+      - cadvisor
