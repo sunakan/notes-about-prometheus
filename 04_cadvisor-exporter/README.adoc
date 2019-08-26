@@ -1,6 +1,6 @@
 == どこまでするか
 
-* Node exporterでOSの状況をブラウザを通してグラフで見る
+* cAdvisor exporterでコンテナの状況をブラウザを通してグラフで見る
 
 === cAdvisor exporterだけ起動
 
