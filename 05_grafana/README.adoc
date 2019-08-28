@@ -1,0 +1,13 @@
+== どこまでするか
+
+* 03を拡張
+* Grafanaを使ってみるまで
+
+=== prometheusの起動
+
+----
+$ cd node_exporter-0.18.1.linux-amd64
+$ ./node_exporter
+----
+
+

@@ -1,0 +1,12 @@
+timezone: Asia/Tokyo
+
+schedule:
+  minutes_interval>: 1
+  skip_on_overtime: true
+
+_export:
+  rb:
+    ruby: /usr/bin/ruby
+
++step1:
+  sh>: ruby my_prime.rb
